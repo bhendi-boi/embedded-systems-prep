@@ -18,8 +18,8 @@ int main(void)
     GPIO_PORTA_DATA_R = 0x20;
     while (1)
     {
-        // ?  0 deg to 90 deg
-        for (i = 5600; i <= 120000; i += 1000)
+        // ?  0 deg to 180 deg
+        for (i = 5600; i <= 184000; i += 1000)
         {
             GPIO_PORTA_DATA_R = 0x20;
             SysLoad(i);
@@ -27,7 +27,7 @@ int main(void)
             SysLoad(1600000 - i);
         }
         // ?  180 deg to 0 deg
-        for (i = 184000; i >= 56000; i -= 1000)
+        for (i = 184000; i >= 5600; i -= 1000)
         {
             GPIO_PORTA_DATA_R = 0x20;
             SysLoad(i);
